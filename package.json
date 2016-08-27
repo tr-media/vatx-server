@@ -2,13 +2,16 @@
   "name": "vatx-server",
   "version": "1.0.0",
   "description": "vat:x server",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "engines": {
+    "node": "4.5.0"
+  },
   "scripts": {
-    "postinstall": "typings install",
+    "postinstall": "typings install && exit 0",
     "clean": "rimraf dist node_modules typings",
     "prebuild": "rimraf dist/*",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
