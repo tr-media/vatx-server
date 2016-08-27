@@ -8,6 +8,7 @@ import * as moment from 'moment';
 export class VatsimDatabase {
 
   private downloader: VatsimDownloader = new VatsimDownloader();
+  private startTime: moment.Moment = moment();
   private pilots: Pilot[] = [];
   private atcs: Atc[] = [];
   private atis: Atis[] = [];
@@ -61,4 +62,10 @@ export class VatsimDatabase {
     };
   }
 
+  getServerInfo() {
+    return {
+      version: require('../package.json').version,
+      started: this.startTime.utc().format() 
+    };
+  }
 }

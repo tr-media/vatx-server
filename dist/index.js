@@ -7,7 +7,7 @@ App.use(Compression());
 var port = process.argv[2] || 80;
 var vatsim = new vatsim_database_1.VatsimDatabase();
 App.get('/', function (req, res) {
-    res.send('<h1>vatx - server</h1><ul>  <li><a href="/stats">/stats</a></li>  <li><a href="/clients">/clients</a></li>  <li><a href="/pilots">/pilots</a></li>  <li><a href="/atcs">/atcs</a></li>  <li><a href="/atis">/atis</a></li></ul>');
+    res.send('<h1>vatx - server</h1><ul>  <li><a href="/stats">/stats</a></li>  <li><a href="/clients">/clients</a></li>  <li><a href="/pilots">/pilots</a></li>  <li><a href="/atcs">/atcs</a></li>  <li><a href="/atis">/atis</a></li></ul>  <p><small>Version: ' + vatsim.getServerInfo().version + ' - up since ' + vatsim.getServerInfo().started + '</small></p>');
 });
 App.get('/clients', function (req, res) {
     reply(res, vatsim.listClients());

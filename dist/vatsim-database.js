@@ -7,6 +7,7 @@ var moment = require('moment');
 var VatsimDatabase = (function () {
     function VatsimDatabase() {
         this.downloader = new vatsim_downloader_1.VatsimDownloader();
+        this.startTime = moment();
         this.pilots = [];
         this.atcs = [];
         this.atis = [];
@@ -47,6 +48,12 @@ var VatsimDatabase = (function () {
             LastStreamUpdate: this.downloader.lastStreamDate.utc().format(),
             ServerTime: moment().utc().format(),
             StreamAge: Math.round(moment().diff(this.downloader.lastStreamDate) * 0.001)
+        };
+    };
+    VatsimDatabase.prototype.getServerInfo = function () {
+        return {
+            version: require('../package.json').version,
+            started: this.startTime.utc().format()
         };
     };
     return VatsimDatabase;
