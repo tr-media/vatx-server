@@ -1,9 +1,10 @@
 "use strict";
 var Express = require("express");
 var App = Express();
+var port = process.argv[2] || 80;
 App.get('/', function (req, res) {
-    res.send('Hello World!');
+    res.send('vatx - server');
 });
-App.listen(80, function () {
-    console.log('Example app listening on port 80!');
+App.listen(port, function () {
+    console.log('Server listening on port ' + port);
 });
