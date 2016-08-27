@@ -7,7 +7,7 @@
     "node": "4.5.0"
   },
   "scripts": {
-    "postinstall": "typings install && exit 0",
+    "postinstall": "typings install || exit 0",
     "clean": "rimraf dist node_modules typings",
     "prebuild": "rimraf dist/*",
     "build": "tsc",
