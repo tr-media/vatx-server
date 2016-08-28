@@ -41,13 +41,13 @@ var VatsimDatabase = (function () {
     };
     VatsimDatabase.prototype.getStats = function () {
         return {
-            OnlinePilots: this.pilots.length,
-            OnlineAtcs: this.atcs.length,
-            OnlineAtis: this.atis.length,
-            OnlineClients: this.pilots.length + this.atcs.length + this.atis.length,
-            LastStreamUpdate: this.downloader.lastStreamDate.utc().format(),
-            ServerTime: moment().utc().format(),
-            StreamAge: Math.round(moment().diff(this.downloader.lastStreamDate) * 0.001)
+            onlinePilots: this.pilots.length,
+            onlineAtcs: this.atcs.length,
+            onlineAtis: this.atis.length,
+            onlineClients: this.pilots.length + this.atcs.length + this.atis.length,
+            lastStreamUpdate: this.downloader.lastStreamDate.utc().format(),
+            serverTime: moment().utc().format(),
+            streamAge: Math.round(moment().diff(this.downloader.lastStreamDate) * 0.001)
         };
     };
     VatsimDatabase.prototype.getServerInfo = function () {
