@@ -30,6 +30,7 @@ export class VatsimDownloader {
     if (this.nextClientUpdate.isSameOrBefore(moment())) {
       var shuffledServerList = this.shuffleServerList();
       console.log('Client update from ' + shuffledServerList[0].url);
+      //TODO: If one server is not responding, try the next one in shuffled list.
       this.getTextfile(shuffledServerList[0].url, function (error, lines: string[]) {
         if (!error) {
           let clients: Client[] = [];
