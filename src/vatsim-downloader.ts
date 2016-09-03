@@ -11,7 +11,7 @@ export class VatsimDownloader {
   private nextServerUpdate: moment.Moment = moment();
   private nextClientUpdate: moment.Moment = moment();
   private serverList: Server[] = [];
-  public lastStreamDate: moment.Moment = moment();
+  public lastStreamDate: moment.Moment = moment.utc([2000, 0, 1]);
 
   public update(next: Function) {
     this.getServers(function () {
@@ -33,17 +33,23 @@ export class VatsimDownloader {
       //TODO: If one server is not responding, try the next one in shuffled list.
       this.getTextfile(shuffledServerList[0].url, function (error, lines: string[]) {
         if (!error) {
+          var dataIsNewer = false;
           let clients: Client[] = [];
           let clientZone: boolean = false;
           for (var i in lines) {
             if (lines[i].indexOf('UPDATE = ') === 0) {
               let date: string = lines[i].substr(9).trim();
-              this.lastStreamDate = moment(date + ' +0000', "YYYYMMDDHHmmss Z");
+              var streamDate = moment.utc(date, "YYYYMMDDHHmmss");
+              if(streamDate.isAfter(this.lastStreamDate)) {
+                this.lastStreamDate = streamDate;
+              } else {
+                break;
+              }
             }
             if (lines[i].indexOf('!SERVERS:') === 0 || lines[i].indexOf('!PREFILE:') === 0) clientZone = false;
             if (lines[i].indexOf(';') !== 0 && clientZone) {
               try {
-                var client = this.getClient(lines[i]);
+                var client = this.getClient(lines[i], this.lastStreamDate);
                 clients.push(client);
               } catch (err) {
                 console.log(err);
@@ -110,14 +116,14 @@ export class VatsimDownloader {
     });
   }
 
-  private getClient(input: string): Client {
+  private getClient(input: string, streamDate: moment.Moment): Client {
     var fields = input.split(':');
       if (fields[3] === 'PILOT') {
-        return new Pilot(fields);
+        return new Pilot(fields, streamDate);
       } else if (fields[3] === 'ATC' && fields[0].indexOf('_ATIS') === fields[0].length - 5) {
-        return new Atis(fields);
+        return new Atis(fields, streamDate);
       } else if (fields[3] === 'ATC') {
-        return new Atc(fields);
+        return new Atc(fields, streamDate);
       } else {
         throw 'Invalid data';
       }

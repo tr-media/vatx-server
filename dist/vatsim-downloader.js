@@ -10,7 +10,7 @@ var VatsimDownloader = (function () {
         this.nextServerUpdate = moment();
         this.nextClientUpdate = moment();
         this.serverList = [];
-        this.lastStreamDate = moment();
+        this.lastStreamDate = moment.utc([2000, 0, 1]);
     }
     VatsimDownloader.prototype.update = function (next) {
         this.getServers(function () {
@@ -31,18 +31,25 @@ var VatsimDownloader = (function () {
             console.log('Client update from ' + shuffledServerList[0].url);
             this.getTextfile(shuffledServerList[0].url, function (error, lines) {
                 if (!error) {
+                    var dataIsNewer = false;
                     var clients = [];
                     var clientZone = false;
                     for (var i in lines) {
                         if (lines[i].indexOf('UPDATE = ') === 0) {
                             var date = lines[i].substr(9).trim();
-                            this.lastStreamDate = moment(date + ' +0000', "YYYYMMDDHHmmss Z");
+                            var streamDate = moment.utc(date, "YYYYMMDDHHmmss");
+                            if (streamDate.isAfter(this.lastStreamDate)) {
+                                this.lastStreamDate = streamDate;
+                            }
+                            else {
+                                break;
+                            }
                         }
                         if (lines[i].indexOf('!SERVERS:') === 0 || lines[i].indexOf('!PREFILE:') === 0)
                             clientZone = false;
                         if (lines[i].indexOf(';') !== 0 && clientZone) {
                             try {
-                                var client = this.getClient(lines[i]);
+                                var client = this.getClient(lines[i], this.lastStreamDate);
                                 clients.push(client);
                             }
                             catch (err) {
@@ -110,16 +117,16 @@ var VatsimDownloader = (function () {
             return _this.serverList[i];
         });
     };
-    VatsimDownloader.prototype.getClient = function (input) {
+    VatsimDownloader.prototype.getClient = function (input, streamDate) {
         var fields = input.split(':');
         if (fields[3] === 'PILOT') {
-            return new pilot_1.Pilot(fields);
+            return new pilot_1.Pilot(fields, streamDate);
         }
         else if (fields[3] === 'ATC' && fields[0].indexOf('_ATIS') === fields[0].length - 5) {
-            return new atis_1.Atis(fields);
+            return new atis_1.Atis(fields, streamDate);
         }
         else if (fields[3] === 'ATC') {
-            return new atc_1.Atc(fields);
+            return new atc_1.Atc(fields, streamDate);
         }
         else {
             throw 'Invalid data';

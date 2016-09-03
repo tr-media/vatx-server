@@ -17,8 +17,10 @@ export class Atc extends Client {
   public atis_message: string;
   public time_last_atis_received: moment.Moment;
   public time_logon: moment.Moment;
+  //additional fields
+  public last_update_from_stream: moment.Moment;
 
-  constructor(data: string[]) {
-    super(data);
+  constructor(data: string[], streamDate: moment.Moment) {
+    super(data, streamDate);
   }
 }

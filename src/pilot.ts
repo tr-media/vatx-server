@@ -39,8 +39,10 @@ export class Pilot extends Client {
   public heading: number;
   public QNH_iHg: number;
   public QNH_Mb: number;
+  //additional fields
+  public last_update_from_stream: moment.Moment;
 
-  constructor(data: string[]) {
-    super(data);
+  constructor(data: string[], streamDate: moment.Moment) {
+    super(data, streamDate);
   }
 }

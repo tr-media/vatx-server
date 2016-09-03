@@ -7,8 +7,8 @@ var __extends = (this && this.__extends) || function (d, b) {
 var client_1 = require('./client');
 var Atis = (function (_super) {
     __extends(Atis, _super);
-    function Atis(data) {
-        _super.call(this, data);
+    function Atis(data, streamDate) {
+        _super.call(this, data, streamDate);
     }
     return Atis;
 }(client_1.Client));

@@ -7,8 +7,8 @@ var __extends = (this && this.__extends) || function (d, b) {
 var client_1 = require('./client');
 var Pilot = (function (_super) {
     __extends(Pilot, _super);
-    function Pilot(data) {
-        _super.call(this, data);
+    function Pilot(data, streamDate) {
+        _super.call(this, data, streamDate);
     }
     return Pilot;
 }(client_1.Client));

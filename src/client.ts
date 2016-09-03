@@ -43,8 +43,10 @@ export class Client {
   heading: number = 0;
   QNH_iHg: number = 0.0;
   QNH_Mb: number = 0.0;
+  //additional fields
+  last_update_from_stream: moment.Moment = moment.utc([2000, 0, 1]);
 
-  constructor(fields: string[]) {
+  constructor(fields: string[], streamDate: moment.Moment) {
     if(fields.length == fieldNames.length) {
       var data = {};
       for(var i = 0; i < fieldNames.length; i++) {
@@ -79,5 +81,7 @@ export class Client {
     } else {
       throw 'Invalid number of fields';
     }
+
+    this.last_update_from_stream = streamDate;
   }
 }
