@@ -1,6 +1,5 @@
 "use strict";
 var server_1 = require('./server');
-var client_1 = require('./client');
 var pilot_1 = require('./pilot');
 var atc_1 = require('./atc');
 var atis_1 = require('./atis');
@@ -42,7 +41,13 @@ var VatsimDownloader = (function () {
                         if (lines[i].indexOf('!SERVERS:') === 0 || lines[i].indexOf('!PREFILE:') === 0)
                             clientZone = false;
                         if (lines[i].indexOf(';') !== 0 && clientZone) {
-                            clients.push(this.getClient(lines[i]));
+                            try {
+                                var client = this.getClient(lines[i]);
+                                clients.push(client);
+                            }
+                            catch (err) {
+                                console.log(err);
+                            }
                         }
                         if (lines[i].indexOf('!CLIENTS:') === 0) {
                             clientZone = true;
@@ -107,18 +112,17 @@ var VatsimDownloader = (function () {
     };
     VatsimDownloader.prototype.getClient = function (input) {
         var fields = input.split(':');
-        console.log;
         if (fields[3] === 'PILOT') {
-            return new pilot_1.Pilot(fields[0], fields[1], fields[2], fields[3], fields[4], parseFloat(fields[5]), parseFloat(fields[6]), fields[7], parseInt(fields[8]), fields[9], parseInt(fields[10]), fields[11], fields[12], fields[13], fields[14], parseInt(fields[15]), parseInt(fields[16]), fields[17], parseInt(fields[18]), parseInt(fields[19]), fields[20], fields[21], fields[22], fields[23], fields[24], fields[25], fields[26], fields[27], fields[28], fields[29], fields[30], parseFloat(fields[31]), parseFloat(fields[32]), parseFloat(fields[33]), parseFloat(fields[34]), fields[35], moment(fields[36] + ' Z', 'YYYYMMDDHHmmss Z'), moment(fields[37] + ' Z', 'YYYYMMDDHHmmss Z'), parseInt(fields[38]), parseFloat(fields[39]), parseFloat(fields[40]));
+            return new pilot_1.Pilot(fields);
         }
         else if (fields[3] === 'ATC' && fields[0].indexOf('_ATIS') === fields[0].length - 5) {
-            return new atis_1.Atis(fields[0], fields[1], fields[2], fields[3], fields[4], parseFloat(fields[5]), parseFloat(fields[6]), fields[7], parseInt(fields[8]), fields[9], parseInt(fields[10]), fields[11], fields[12], fields[13], fields[14], parseInt(fields[15]), parseInt(fields[16]), fields[17], parseInt(fields[18]), parseInt(fields[19]), fields[20], fields[21], fields[22], fields[23], fields[24], fields[25], fields[26], fields[27], fields[28], fields[29], fields[30], parseFloat(fields[31]), parseFloat(fields[32]), parseFloat(fields[33]), parseFloat(fields[34]), fields[35], moment(fields[36] + ' Z', 'YYYYMMDDHHmmss Z'), moment(fields[37] + ' Z', 'YYYYMMDDHHmmss Z'), parseInt(fields[38]), parseFloat(fields[39]), parseFloat(fields[40]));
+            return new atis_1.Atis(fields);
         }
         else if (fields[3] === 'ATC') {
-            return new atc_1.Atc(fields[0], fields[1], fields[2], fields[3], fields[4], parseFloat(fields[5]), parseFloat(fields[6]), fields[7], parseInt(fields[8]), fields[9], parseInt(fields[10]), fields[11], fields[12], fields[13], fields[14], parseInt(fields[15]), parseInt(fields[16]), fields[17], parseInt(fields[18]), parseInt(fields[19]), fields[20], fields[21], fields[22], fields[23], fields[24], fields[25], fields[26], fields[27], fields[28], fields[29], fields[30], parseFloat(fields[31]), parseFloat(fields[32]), parseFloat(fields[33]), parseFloat(fields[34]), fields[35], moment(fields[36] + ' Z', 'YYYYMMDDHHmmss Z'), moment(fields[37] + ' Z', 'YYYYMMDDHHmmss Z'), parseInt(fields[38]), parseFloat(fields[39]), parseFloat(fields[40]));
+            return new atc_1.Atc(fields);
         }
         else {
-            return new client_1.Client(fields[0], fields[1], fields[2], fields[3], fields[4], parseFloat(fields[5]), parseFloat(fields[6]), fields[7], parseInt(fields[8]), fields[9], parseInt(fields[10]), fields[11], fields[12], fields[13], fields[14], parseInt(fields[15]), parseInt(fields[16]), fields[17], parseInt(fields[18]), parseInt(fields[19]), fields[20], fields[21], fields[22], fields[23], fields[24], fields[25], fields[26], fields[27], fields[28], fields[29], fields[30], parseFloat(fields[31]), parseFloat(fields[32]), parseFloat(fields[33]), parseFloat(fields[34]), fields[35], moment(fields[36] + ' Z', 'YYYYMMDDHHmmss Z'), moment(fields[37] + ' Z', 'YYYYMMDDHHmmss Z'), parseInt(fields[38]), parseFloat(fields[39]), parseFloat(fields[40]));
+            throw 'Invalid data';
         }
     };
     return VatsimDownloader;
