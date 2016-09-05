@@ -32,9 +32,9 @@ export class VatsimDownloader {
       console.log('Client update from ' + shuffledServerList[0].url);
       //TODO: If one server is not responding, try the next one in shuffled list.
       this.getTextfile(shuffledServerList[0].url, function (error, lines: string[]) {
+        let clients: Client[] = [];
         if (!error) {
           var dataIsNewer = false;
-          let clients: Client[] = [];
           let clientZone: boolean = false;
           for (var i in lines) {
             if (lines[i].indexOf('UPDATE = ') === 0) {
@@ -43,6 +43,7 @@ export class VatsimDownloader {
               if(streamDate.isAfter(this.lastStreamDate)) {
                 this.lastStreamDate = streamDate;
               } else {
+                error = true;
                 break;
               }
             }
@@ -59,6 +60,8 @@ export class VatsimDownloader {
               clientZone = true;
             }
           }
+        }
+        if (!error) {
           this.nextClientUpdate = moment().add(1, 'minute');
           next(null, clients);
         } else {
