@@ -30,9 +30,9 @@ var VatsimDownloader = (function () {
             var shuffledServerList = this.shuffleServerList();
             console.log('Client update from ' + shuffledServerList[0].url);
             this.getTextfile(shuffledServerList[0].url, function (error, lines) {
+                var clients = [];
                 if (!error) {
                     var dataIsNewer = false;
-                    var clients = [];
                     var clientZone = false;
                     for (var i in lines) {
                         if (lines[i].indexOf('UPDATE = ') === 0) {
@@ -42,6 +42,7 @@ var VatsimDownloader = (function () {
                                 this.lastStreamDate = streamDate;
                             }
                             else {
+                                error = true;
                                 break;
                             }
                         }
@@ -60,6 +61,8 @@ var VatsimDownloader = (function () {
                             clientZone = true;
                         }
                     }
+                }
+                if (!error) {
                     this.nextClientUpdate = moment().add(1, 'minute');
                     next(null, clients);
                 }
