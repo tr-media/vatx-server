@@ -30,10 +30,13 @@
     "url": "https://github.com/tr-media/vatx-server/issues"
   },
   "dependencies": {
+    "command-line-args": "^3.0.1",
     "compression": "^1.6.2",
     "express": "^4.14.0",
+    "md5": "^2.2.1",
     "moment": "^2.14.1",
-    "request": "^2.74.0"
+    "request": "^2.74.0",
+    "universal-analytics": "^0.4.2"
   },
   "devDependencies": {
     "nodemon": "^1.10.2",
