@@ -1,1 +1,1 @@
-web: node dist/index.js --port=$PORT --gaid=GAID
+web: node dist/index.js --port=$PORT --gaid=$GAID
