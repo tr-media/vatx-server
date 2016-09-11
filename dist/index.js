@@ -24,19 +24,19 @@ App.get('/', function (req, res) {
     track(req);
 });
 App.get('/clients', function (req, res) {
-    reply(res, vatsim.listClients());
+    reply(res, vatsim.listClients(req.query.mode));
     track(req);
 });
 App.get('/pilots', function (req, res) {
-    reply(res, vatsim.listPilots());
+    reply(res, vatsim.listPilots(req.query.mode));
     track(req);
 });
 App.get('/atcs', function (req, res) {
-    reply(res, vatsim.listAtcs());
+    reply(res, vatsim.listAtcs(req.query.mode));
     track(req);
 });
 App.get('/atis', function (req, res) {
-    reply(res, vatsim.listAtis());
+    reply(res, vatsim.listAtis(req.query.mode));
     track(req);
 });
 App.get('/stats', function (req, res) {

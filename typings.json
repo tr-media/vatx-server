@@ -1,16 +1,16 @@
 {
-  "globalDependencies": {
-    "compression": "registry:dt/compression#0.0.0+20160501162003",
-    "express": "registry:dt/express#4.0.0+20160708185218",
-    "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20160819131900",
-    "form-data": "registry:dt/form-data#0.0.0+20160724024111",
-    "mime": "registry:dt/mime#0.0.0+20160316155526",
-    "node": "registry:dt/node#6.0.0+20160826120425",
-    "request": "registry:dt/request#0.0.0+20160726020908",
-    "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
-    "universal-analytics": "registry:dt/universal-analytics#0.3.2+20160317120654"
-  },
-  "dependencies": {
-    "universal-analytics": "registry:npm/universal-analytics#0.3.10+20160723033700"
-  }
+    "globalDependencies": {
+        "compression": "registry:dt/compression#0.0.0+20160501162003",
+        "express": "registry:dt/express#4.0.0+20160708185218",
+        "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20160819131900",
+        "form-data": "registry:dt/form-data#0.0.0+20160724024111",
+        "mime": "registry:dt/mime#0.0.0+20160316155526",
+        "node": "registry:dt/node#6.0.0+20160826120425",
+        "request": "registry:dt/request#0.0.0+20160726020908",
+        "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
+        "universal-analytics": "registry:dt/universal-analytics#0.3.2+20160317120654"
+    },
+    "dependencies": {
+        "universal-analytics": "registry:npm/universal-analytics#0.3.10+20160723033700"
+    }
 }

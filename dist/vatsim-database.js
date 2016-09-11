@@ -23,21 +23,33 @@ var VatsimDatabase = (function () {
             setTimeout(this.timer.bind(this), 5000);
         }.bind(this));
     };
-    VatsimDatabase.prototype.listClients = function () {
+    VatsimDatabase.prototype.listClients = function (mode) {
         return {
-            pilots: this.pilots,
-            atcs: this.atcs,
-            atis: this.atis
+            pilots: this.prepareData(this.pilots, mode),
+            atcs: this.prepareData(this.atcs, mode),
+            atis: this.prepareData(this.atis, mode)
         };
     };
-    VatsimDatabase.prototype.listPilots = function () {
-        return this.pilots;
+    VatsimDatabase.prototype.listPilots = function (mode) {
+        return this.prepareData(this.pilots, mode);
     };
-    VatsimDatabase.prototype.listAtcs = function () {
-        return this.atcs;
+    VatsimDatabase.prototype.listAtcs = function (mode) {
+        return this.prepareData(this.atcs, mode);
     };
-    VatsimDatabase.prototype.listAtis = function () {
-        return this.atis;
+    VatsimDatabase.prototype.listAtis = function (mode) {
+        return this.prepareData(this.atis, mode);
+    };
+    VatsimDatabase.prototype.prepareData = function (array, mode) {
+        if (mode === 'dict') {
+            var result = {};
+            for (var i = 0; i < array.length; i++) {
+                result[array[i].callsign] = array[i];
+            }
+            return result;
+        }
+        else {
+            return array;
+        }
     };
     VatsimDatabase.prototype.getStats = function () {
         return {
