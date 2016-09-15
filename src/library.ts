@@ -6,8 +6,8 @@ export class Library {
         });
     }
 
-    public getAirports() {
-        return this.airports;
+    public getAirports(mode: string = '') {
+        return this.prepareData(this.airports, mode);
     }
 
     public getAirport(id: string) {
@@ -15,5 +15,17 @@ export class Library {
             return this.airports[id];
         }
         return null;
+    }
+
+    private prepareData(dict: any, mode: string) {
+        if (mode === 'list') {
+            var result = [];
+            for (var key in dict) {
+                result.push(dict[key]);
+            }
+            return result;
+        } else {
+            return dict;
+        }
     }
 }

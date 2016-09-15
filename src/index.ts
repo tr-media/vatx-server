@@ -57,7 +57,7 @@ App.get('/stats', function (req, res) {
 });
 
 App.get('/airports', function (req, res) {
-    reply(res, library.getAirports());
+    reply(res, library.getAirports(req.query.mode));
     track(req);
 });
 

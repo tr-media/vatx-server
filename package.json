@@ -1,6 +1,6 @@
 {
     "name": "vatx-server",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "vat:x server",
     "main": "dist/index.js",
     "engines": {
