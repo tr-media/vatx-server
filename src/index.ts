@@ -63,7 +63,7 @@ App.get('/airports', function (req, res) {
 
 App.get('/airport/:id', function (req, res) {
     if (req.params.id) {
-        var airport = library.getAirport(req.params.id.toLowerCase());
+        var airport = library.getAirport(req.params.id);
         if (airport) {
             reply(res, airport);
             track(req);
@@ -81,7 +81,7 @@ App.get('/airlines', function (req, res) {
 
 App.get('/airline/:id', function (req, res) {
     if (req.params.id) {
-        var airport = library.getAirline(req.params.id.toLowerCase());
+        var airport = library.getAirline(req.params.id);
         if (airport) {
             reply(res, airport);
             track(req);
@@ -89,6 +89,11 @@ App.get('/airline/:id', function (req, res) {
         }
     }
     fail(res);
+    track(req);
+});
+
+App.get('/find', function (req, res) {
+    reply(res, library.find(req.query.q));
     track(req);
 });
 
