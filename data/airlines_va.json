@@ -1,0 +1,1340 @@
+[
+    {
+        "id": "AAV",
+        "name": "Almeria Airlines Virtual",
+        "callsign": "AAV",
+        "country": "Netherlands"
+    },
+    {
+        "id": "ADV",
+        "name": "Air Dolomiti Virtual",
+        "callsign": "ADV",
+        "country": "Italy"
+    },
+    {
+        "id": "AFA",
+        "name": "American Flight Airways",
+        "callsign": "AFA",
+        "country": "USA"
+    },
+    {
+        "id": "AGJ",
+        "name": "Air Greece VA",
+        "callsign": "AIR GREECE",
+        "country": "Greece"
+    },
+    {
+        "id": "AGY",
+        "name": "Air Germany",
+        "callsign": "AIR GERMANY",
+        "country": "Germany"
+    },
+    {
+        "id": "AHS",
+        "name": "AirHispania",
+        "callsign": "AIRHISPANIA",
+        "country": "Spain"
+    },
+    {
+        "id": "ALP",
+        "name": "ALPenwings",
+        "callsign": "ALPIA",
+        "country": "Austria"
+    },
+    {
+        "id": "ALR",
+        "name": "Air Lorr",
+        "callsign": "AIR LORR",
+        "country": "France"
+    },
+    {
+        "id": "ALT",
+        "name": "Altair Virtual Airlines",
+        "callsign": "ALT",
+        "country": ""
+    },
+    {
+        "id": "ALZ",
+        "name": "AlAndalus Airlines VA",
+        "callsign": "ALANDALUS",
+        "country": "Spain"
+    },
+    {
+        "id": "APA",
+        "name": "Air Pacifica Airlines",
+        "callsign": "PACIFICA",
+        "country": "Virgin Islands (US)"
+    },
+    {
+        "id": "ARL",
+        "name": "Arabian Airlines",
+        "callsign": "ARABIAN",
+        "country": "Jordan"
+    },
+    {
+        "id": "ARP",
+        "name": "Avio Club Virtuale Padova",
+        "callsign": "AIRPRO",
+        "country": "Italy"
+    },
+    {
+        "id": "ASD",
+        "name": "AeroSarda",
+        "callsign": "SARDA",
+        "country": "Italy"
+    },
+    {
+        "id": "ASE",
+        "name": "Aegean Seagull",
+        "callsign": "SEAGULL",
+        "country": "Greece"
+    },
+    {
+        "id": "ASO",
+        "name": "AirSource The Original Virtual Pilot Union",
+        "callsign": "AIRSOURCE",
+        "country": "USA"
+    },
+    {
+        "id": "ASV",
+        "name": "Atlantic Sun Airways",
+        "callsign": "ATLANTICSUN",
+        "country": "USA"
+    },
+    {
+        "id": "ATL",
+        "name": "Atlantica Brasil",
+        "callsign": "ATLANTICA",
+        "country": "Brazil"
+    },
+    {
+        "id": "AUQ",
+        "name": "Air Unique",
+        "callsign": "STARJET",
+        "country": "GERMANY"
+    },
+    {
+        "id": "AVQ",
+        "name": "AeroVirtuel Quebec",
+        "callsign": "AVGO",
+        "country": "Canada"
+    },
+    {
+        "id": "AXB",
+        "name": "American Blue VA",
+        "callsign": "AMERICAN BLUE",
+        "country": "USA"
+    },
+    {
+        "id": "AZO",
+        "name": "Abruzzair",
+        "callsign": "ABRUZZAIR",
+        "country": "Italy"
+    },
+    {
+        "id": "AZT",
+        "name": "Aztec Airways",
+        "callsign": "AZTEC",
+        "country": "Poland"
+    },
+    {
+        "id": "BAC",
+        "name": "Baccara Express",
+        "callsign": "BACCARA",
+        "country": "France"
+    },
+    {
+        "id": "BAL",
+        "name": "Berlin Airlines VA (closed)",
+        "callsign": "BERLIN AIRLINES",
+        "country": "Germany"
+    },
+    {
+        "id": "BAT",
+        "name": "Beach-Airlines VA",
+        "callsign": "BEACHAIR",
+        "country": "Germany"
+    },
+    {
+        "id": "BCA",
+        "name": "Britannic VA",
+        "callsign": "BRITANNIC",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "BGT",
+        "name": "Budget Airlines VA",
+        "callsign": "BUDGER",
+        "country": "Netherlands"
+    },
+    {
+        "id": "BRW",
+        "name": "BAHINES STREAM AIRWAYS",
+        "callsign": "BAHINES",
+        "country": "France"
+    },
+    {
+        "id": "BTO",
+        "name": "AeroBoteco Airlines",
+        "callsign": "AEROBOTECO",
+        "country": "Brazil"
+    },
+    {
+        "id": "BVA",
+        "name": "British Virtual Airways",
+        "callsign": "SPEEDBIRD",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "CAL",
+        "name": "China Airlines",
+        "callsign": "DYNASTY",
+        "country": "China"
+    },
+    {
+        "id": "CAP",
+        "name": "CA Deutsche Piloten",
+        "callsign": "CADP",
+        "country": "Germany"
+    },
+    {
+        "id": "CAT",
+        "name": "Catalonian Airlines",
+        "callsign": "CATALONIAN",
+        "country": ""
+    },
+    {
+        "id": "CAX",
+        "name": "California Airlines",
+        "callsign": "CAL AIR",
+        "country": "USA"
+    },
+    {
+        "id": "CDP",
+        "name": "aerocondor",
+        "callsign": "CDP",
+        "country": "Peru"
+    },
+    {
+        "id": "CEA",
+        "name": "Central European International Virtual Airways",
+        "callsign": "CENTRAL EUROPEAN",
+        "country": "Germany"
+    },
+    {
+        "id": "CGS",
+        "name": "Cargostar Virtual Airlines",
+        "callsign": "Starship",
+        "country": "USA"
+    },
+    {
+        "id": "CHE",
+        "name": "Cheese Air",
+        "callsign": "CHEESE AIR",
+        "country": "Switzerland"
+    },
+    {
+        "id": "CKT",
+        "name": "Caledonian VA",
+        "callsign": "BEECAL",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "CNS",
+        "name": "Conesul VA",
+        "callsign": "CONESUL",
+        "country": "Brazil"
+    },
+    {
+        "id": "CPC",
+        "name": "CP Air",
+        "callsign": "EMPRESS",
+        "country": "Canada"
+    },
+    {
+        "id": "CSB",
+        "name": "Cassubian Airways Team VA",
+        "callsign": "CASSUBIAN",
+        "country": "Poland"
+    },
+    {
+        "id": "CVA",
+        "name": "Canadian Virtual Airlines",
+        "callsign": "CANADIAN",
+        "country": "Canada"
+    },
+    {
+        "id": "CVA",
+        "name": "CVA GLOBAL AIRLINES",
+        "callsign": "GLOBAL",
+        "country": "Cape Verde"
+    },
+    {
+        "id": "CVC",
+        "name": "Canada Charters and Cargo",
+        "callsign": "CANADA CHARTERS",
+        "country": "Canada"
+    },
+    {
+        "id": "DGF",
+        "name": "Dragonflight VA",
+        "callsign": "DRAGONFLIGHT",
+        "country": "Germany"
+    },
+    {
+        "id": "CWA",
+        "name": "Celtic Airways",
+        "callsign": "CELTIC",
+        "country": "Ireland"
+    },
+    {
+        "id": "CWV",
+        "name": "Ca.Airways",
+        "callsign": "BLUE BIRD",
+        "country": "Germany"
+    },
+    {
+        "id": "CYB",
+        "name": "Cyber Air VA",
+        "callsign": "CYBER AIR",
+        "country": "USA"
+    },
+    {
+        "id": "DDF",
+        "name": "Kad Air Virtual",
+        "callsign": "KADAIR",
+        "country": ""
+    },
+    {
+        "id": "DGV",
+        "name": "Dutch Global VA",
+        "callsign": "DUTCH GLOBAL",
+        "country": ""
+    },
+    {
+        "id": "DIA",
+        "name": "VA Interair",
+        "callsign": "INTERAIR",
+        "country": "Germany"
+    },
+    {
+        "id": "DVA",
+        "name": "Delta Virtual",
+        "callsign": "DELTA",
+        "country": "Virtual"
+    },
+    {
+        "id": "DSX",
+        "name": "Dreamstar Air",
+        "callsign": "DREAMSTAR",
+        "country": "Italy"
+    },
+    {
+        "id": "EAS",
+        "name": "European Airlines",
+        "callsign": "EA",
+        "country": ""
+    },
+    {
+        "id": "EBA",
+        "name": "EuroBerlin VA",
+        "callsign": "EBA",
+        "country": "Germany"
+    },
+    {
+        "id": "EEP",
+        "name": "EuropeanExpress Virtual Airlines",
+        "callsign": "EUROPEAN",
+        "country": "Hungary"
+    },
+    {
+        "id": "EFP",
+        "name": "Eurofly VA",
+        "callsign": "EUROFLY",
+        "country": "Germany"
+    },
+    {
+        "id": "EFV",
+        "name": "Eufly Virtual",
+        "callsign": "EUFLY",
+        "country": "Italy"
+    },
+    {
+        "id": "EFS",
+        "name": "Executive Fleet Services",
+        "callsign": "EXECFLEET",
+        "country": "USA"
+    },
+    {
+        "id": "EHM",
+        "name": "EuroHarmony",
+        "callsign": "EUROHARMONY",
+        "country": "Europe"
+    },
+    {
+        "id": "EHY",
+        "name": "Ephesus VA",
+        "callsign": "EFES",
+        "country": "Turkey"
+    },
+    {
+        "id": "EMD",
+        "name": "Emerald Air",
+        "callsign": "EMERALD",
+        "country": "Ireland"
+    },
+    {
+        "id": "ENG",
+        "name": "Magnastar Engineering",
+        "callsign": "ENGINEERING",
+        "country": "USA"
+    },
+    {
+        "id": "ESA",
+        "name": "Eurostar-Aviation VA",
+        "callsign": "EUROSTAR",
+        "country": ""
+    },
+    {
+        "id": "ESL",
+        "name": "Eastline VA",
+        "callsign": "EASTLINE",
+        "country": ""
+    },
+    {
+        "id": "ETR",
+        "name": "Eccentric Travels",
+        "callsign": "ECCENTRIC",
+        "country": "Brazil"
+    },
+    {
+        "id": "EUA",
+        "name": "European Airways",
+        "callsign": "EUROPEAN",
+        "country": "Germany"
+    },
+    {
+        "id": "EUP",
+        "name": "Europe Airlines",
+        "callsign": "EUROPE",
+        "country": "Belgium"
+    },
+    {
+        "id": "EUT",
+        "name": "Eurotransit Virtual",
+        "callsign": "GOFREE",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "EUV",
+        "name": "Eurotravel VA",
+        "callsign": "EUROPA",
+        "country": "Italy"
+    },
+    {
+        "id": "EUX",
+        "name": "EuropeanExpress Virtual Airlines",
+        "callsign": "EUROPEAN",
+        "country": "Hungary"
+    },
+    {
+        "id": "EVS",
+        "name": "Elvis Airlines",
+        "callsign": "ELVIS",
+        "country": "Italy"
+    },
+    {
+        "id": "EWC",
+        "name": "Eurowings Cargo",
+        "callsign": "EUROWINGS CARGO",
+        "country": "Germany"
+    },
+    {
+        "id": "FCY",
+        "name": "CyberAvia",
+        "callsign": "CYBERAVIA",
+        "country": "France"
+    },
+    {
+        "id": "FDS",
+        "name": "Flight Deck Solutions",
+        "callsign": "FLIGHTDECK",
+        "country": "Canada"
+    },
+    {
+        "id": "FEE",
+        "name": "Fairytale Airways",
+        "callsign": "FAIRY",
+        "country": "Germany"
+    },
+    {
+        "id": "FHA",
+        "name": "HA-Volnet",
+        "callsign": "FHA",
+        "country": "France"
+    },
+    {
+        "id": "FIR",
+        "name": "Virtual United States Fire Administration",
+        "callsign": "FIREBIRD",
+        "country": "USA"
+    },
+    {
+        "id": "FKY",
+        "name": "FreeSky Aviation",
+        "callsign": "FREESKY",
+        "country": "Hungary"
+    },
+    {
+        "id": "FLY",
+        "name": "flyWay",
+        "callsign": "FLY",
+        "country": "USA"
+    },
+    {
+        "id": "FMT",
+        "name": "FRANCE METEOR",
+        "callsign": "FMT",
+        "country": "France"
+    },
+    {
+        "id": "FRS",
+        "name": "Fischer Sky VA",
+        "callsign": "FISCHER SKY",
+        "country": "VA"
+    },
+    {
+        "id": "FSA",
+        "name": "FSAero Club",
+        "callsign": "FSA",
+        "country": "France"
+    },
+    {
+        "id": "FSM",
+        "name": "Flyingsim",
+        "callsign": "FLYINGSIM",
+        "country": "Netherlands"
+    },
+    {
+        "id": "FWA",
+        "name": "Freeworld Airways",
+        "callsign": "FREEWORLD",
+        "country": "USA"
+    },
+    {
+        "id": "FXP",
+        "name": "FlightXPress Virtual Airline",
+        "callsign": "FLIGHTXPRESS",
+        "country": "Austria"
+    },
+    {
+        "id": "GAE",
+        "name": "German Air Express",
+        "callsign": "EXPRESS",
+        "country": "Germany"
+    },
+    {
+        "id": "GAI",
+        "name": "G-AIRWAYS",
+        "callsign": "GAI",
+        "country": "Germany"
+    },
+    {
+        "id": "GAL",
+        "name": "German Airlines",
+        "callsign": "GERMAN AIRLINES",
+        "country": "Germany"
+    },
+    {
+        "id": "GBH",
+        "name": "Global Helicoptere",
+        "callsign": "GLOBAL HELICO",
+        "country": ""
+    },
+    {
+        "id": "GBP",
+        "name": "German Butterfly",
+        "callsign": "BUTTERFLY",
+        "country": "Germany"
+    },
+    {
+        "id": "GBT",
+        "name": "German Broeseltours",
+        "callsign": "BROESELTOURS",
+        "country": "Germany"
+    },
+    {
+        "id": "GCA",
+        "name": "Grand Cargo Airlines",
+        "callsign": "GRAND CARGO",
+        "country": "Poland"
+    },
+    {
+        "id": "GDJ",
+        "name": "GoldenJet Virtual",
+        "callsign": "GOLDEN",
+        "country": "Poland"
+    },
+    {
+        "id": "GEW",
+        "name": "German Airways VA",
+        "callsign": "BLUEFLIGHT",
+        "country": "Germany"
+    },
+    {
+        "id": "GFI",
+        "name": "Group Flight",
+        "callsign": "GROUP FLIGHT",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "GFS",
+        "name": "Group Flight",
+        "callsign": "GROUP FLIGHT",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "GFT",
+        "name": "Group Flight",
+        "callsign": "GROUP FLIGHT",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "GLS",
+        "name": "Global Airways",
+        "callsign": "GLOBAL",
+        "country": "Germany"
+    },
+    {
+        "id": "GMA",
+        "name": "Green Mountain Airlines",
+        "callsign": "GREEN MOUNTAIN",
+        "country": "USA"
+    },
+    {
+        "id": "GRP",
+        "name": "Group Flight",
+        "callsign": "GROUP FLIGHT",
+        "country": "USA"
+    },
+    {
+        "id": "GUD",
+        "name": "German United",
+        "callsign": "FLYBIRD",
+        "country": "Germany"
+    },
+    {
+        "id": "GVA",
+        "name": "German-Virtual-Airforce",
+        "callsign": "GERMAN AIRFORCE",
+        "country": "Germany"
+    },
+    {
+        "id": "GWG",
+        "name": "German Airwings Holding",
+        "callsign": "GERMAN AIRWINGS",
+        "country": "Germany"
+    },
+    {
+        "id": "HER",
+        "name": "Heli-Recif",
+        "callsign": "HELI RECIF",
+        "country": ""
+    },
+    {
+        "id": "HVA",
+        "name": "Hooters Virtual Airlines",
+        "callsign": "HOOTERS",
+        "country": "USA"
+    },
+    {
+        "id": "IAT",
+        "name": "AIT Aviation",
+        "callsign": "AIT",
+        "country": "Israel"
+    },
+    {
+        "id": "IDC",
+        "name": "Indice Air",
+        "callsign": "INDICE",
+        "country": "Spain"
+    },
+    {
+        "id": "IFC",
+        "name": "International Flightsim Convention",
+        "callsign": "IFC",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "IMG",
+        "name": "ImaginAir",
+        "callsign": "IMG",
+        "country": "Canada"
+    },
+    {
+        "id": "ISO",
+        "name": "Isomba Airlines",
+        "callsign": "ISOMBA",
+        "country": "France"
+    },
+    {
+        "id": "JAX",
+        "name": "Jet America",
+        "callsign": "JET AMERICA",
+        "country": "USA"
+    },
+    {
+        "id": "JHB",
+        "name": "JHB Airlines",
+        "callsign": "DIAMOND",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "JVA",
+        "name": "Jetlantic Virtual Airways",
+        "callsign": "JETLANTIC",
+        "country": ""
+    },
+    {
+        "id": "KNT",
+        "name": "Knight Air",
+        "callsign": "KNIGHT",
+        "country": ""
+    },
+    {
+        "id": "KSZ",
+        "name": "Kszerszair",
+        "callsign": "KSHERSHAIR",
+        "country": "Malta"
+    },
+    {
+        "id": "LNF",
+        "name": "Lenfly Virtual Airline",
+        "callsign": "LENFLY",
+        "country": "Switzerland"
+    },
+    {
+        "id": "LDS",
+        "name": "Level-D Simulations Flying Club",
+        "callsign": "ACID",
+        "country": "Canada"
+    },
+    {
+        "id": "LHA",
+        "name": "Leipzig Air",
+        "callsign": "LEIPZIG AIR",
+        "country": "Germany"
+    },
+    {
+        "id": "LIT",
+        "name": "Littoral Airlines",
+        "callsign": "LITTORAL",
+        "country": "France"
+    },
+    {
+        "id": "LOW",
+        "name": "Air Lowland",
+        "callsign": "LOWLAND",
+        "country": "Netherlands"
+    },
+    {
+        "id": "LVA",
+        "name": "Liberty Virtual Airlines",
+        "callsign": "LIBERTY",
+        "country": "USA"
+    },
+    {
+        "id": "LWA",
+        "name": "Livewire Airlines",
+        "callsign": "LIVEWIRE",
+        "country": ""
+    },
+    {
+        "id": "LXA",
+        "name": "Lunatics Virtual Airline",
+        "callsign": "LUNATICS",
+        "country": ""
+    },
+    {
+        "id": "MAX",
+        "name": "MaxFreight",
+        "callsign": "MAX",
+        "country": "USA"
+    },
+    {
+        "id": "MOS",
+        "name": "Moscow Air Service",
+        "callsign": "MOSCOW",
+        "country": "Russia"
+    },
+    {
+        "id": "MQT",
+        "name": "Musketeer Virtual",
+        "callsign": "MUSKETEER",
+        "country": "Germany"
+    },
+    {
+        "id": "MTN",
+        "name": "Mountain Air Virtual Airlines",
+        "callsign": "MOUNTAIN AIR",
+        "country": "USA"
+    },
+    {
+        "id": "MCA",
+        "name": "MidContinent Airlines",
+        "callsign": "MIDCON",
+        "country": "USA"
+    },
+    {
+        "id": "NAC",
+        "name": "North AirCargo VA",
+        "callsign": "AIRCARGO",
+        "country": "Norway"
+    },
+    {
+        "id": "NBL",
+        "name": "Noble Air",
+        "callsign": "NOBLE AIR",
+        "country": "USA"
+    },
+    {
+        "id": "NEC",
+        "name": "Northeast Cargo",
+        "callsign": "NORTHEAST",
+        "country": "USA"
+    },
+    {
+        "id": "NMH",
+        "name": "Metro Helicopters",
+        "callsign": "METRO",
+        "country": "USA"
+    },
+    {
+        "id": "NXA",
+        "name": "North Air VA",
+        "callsign": "NORTH AIR",
+        "country": "Germany"
+    },
+    {
+        "id": "OAA",
+        "name": "Orange Air",
+        "callsign": "ORANGE",
+        "country": "Netherlands"
+    },
+    {
+        "id": "OAH",
+        "name": "Historic Olympic Airways virtual",
+        "callsign": "OLYMPIC",
+        "country": "Greece"
+    },
+    {
+        "id": "OAV",
+        "name": "Olympic Airways Virtual",
+        "callsign": "OLYMPIC",
+        "country": "Greece"
+    },
+    {
+        "id": "OBT",
+        "name": "Orbit Xpress",
+        "callsign": "ORBIT",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "ONY",
+        "name": "Team Onyx",
+        "callsign": "ORANGE",
+        "country": "Germany"
+    },
+    {
+        "id": "OVA",
+        "name": "Ozark Virtual Airlines",
+        "callsign": "OZARK",
+        "country": "USA"
+    },
+    {
+        "id": "PAT",
+        "name": "PVI Airlines Team",
+        "callsign": "TEAM",
+        "country": "Italy"
+    },
+    {
+        "id": "PAW",
+        "name": "Premier Airways",
+        "callsign": "PREMIER",
+        "country": "USA"
+    },
+    {
+        "id": "PAY",
+        "name": "Pacific VA",
+        "callsign": "PACIFIC",
+        "country": "???"
+    },
+    {
+        "id": "PCD",
+        "name": "Pacific Direct Airways",
+        "callsign": "PACIFIC DIRECT",
+        "country": "Fiji-Tonga"
+    },
+    {
+        "id": "PCS",
+        "name": "Puget Air Charter Services",
+        "callsign": "PUGET",
+        "country": ""
+    },
+    {
+        "id": "PDE",
+        "name": "Peruana De Aviacian",
+        "callsign": "PERUANA",
+        "country": "Peru"
+    },
+    {
+        "id": "PGU",
+        "name": "Air Prague VA",
+        "callsign": "AIR PRAGUE",
+        "country": "Czech Republic"
+    },
+    {
+        "id": "PLM",
+        "name": "Palmair",
+        "callsign": "PALMA",
+        "country": "Spain"
+    },
+    {
+        "id": "PLR",
+        "name": "polAir Airlines",
+        "callsign": "POLAIR",
+        "country": "Poland"
+    },
+    {
+        "id": "PLU",
+        "name": "Plusair-va",
+        "callsign": "PLUSAIR",
+        "country": "Germany"
+    },
+    {
+        "id": "PNX",
+        "name": "Phoenix (Virtual) Flight Services",
+        "callsign": "PHOENIX",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "POL",
+        "name": "Polonaise Polish Vitrual Airlines",
+        "callsign": "POLONAISE",
+        "country": "Poland"
+    },
+    {
+        "id": "PST",
+        "name": "PSTAIR",
+        "callsign": "PAULISTA",
+        "country": "Brazil"
+    },
+    {
+        "id": "PTO",
+        "name": "Potomac Airways",
+        "callsign": "POTOMAC",
+        "country": "USA"
+    },
+    {
+        "id": "PUG",
+        "name": "RallyeAir",
+        "callsign": "RALLYEAIR",
+        "country": "Spain"
+    },
+    {
+        "id": "PVA",
+        "name": "303 Polish Virtual Airlines",
+        "callsign": "PVA",
+        "country": "Poland"
+    },
+    {
+        "id": "RHT",
+        "name": "Reheat",
+        "callsign": "HEAT",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "RLA",
+        "name": "Rynko Air Line",
+        "callsign": "RYNKO",
+        "country": "Italy"
+    },
+    {
+        "id": "RUE",
+        "name": "Russian Express Virtual",
+        "callsign": "RUSSIAN EXPRESS",
+        "country": "Russia"
+    },
+    {
+        "id": "SAC",
+        "name": "Simulated Air Canada",
+        "callsign": "AIR CANADA",
+        "country": "Canada"
+    },
+    {
+        "id": "SAX",
+        "name": "SunAir Express Virtual Airlines",
+        "callsign": "SUNAIR EXPRESS",
+        "country": "USA"
+    },
+    {
+        "id": "SCO",
+        "name": "Scot-Air",
+        "callsign": "SCOTAIR",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "SEA",
+        "name": "Skyeast Airways",
+        "callsign": "SKYEAST",
+        "country": ""
+    },
+    {
+        "id": "SFV",
+        "name": "Smile & Fly! Hellas VA",
+        "callsign": "SMILE",
+        "country": "Greece"
+    },
+    {
+        "id": "SIM",
+        "name": "Simline",
+        "callsign": "SIMLINE",
+        "country": "Germany"
+    },
+    {
+        "id": "SNA",
+        "name": "SimNetAir",
+        "callsign": "SIMAIR",
+        "country": "Poland"
+    },
+    {
+        "id": "SNA",
+        "name": "SenAir",
+        "callsign": "SENAIR",
+        "country": "Germany"
+    },
+    {
+        "id": "SRD",
+        "name": "SardFLY",
+        "callsign": "SARDFLY",
+        "country": "Italy"
+    },
+    {
+        "id": "SRH",
+        "name": "Special Air Service Hungary",
+        "callsign": "SPECIAL",
+        "country": "Hungary"
+    },
+    {
+        "id": "SSA",
+        "name": "Southern Sky Aviation",
+        "callsign": "SOUTHERN",
+        "country": "Australia"
+    },
+    {
+        "id": "STA",
+        "name": "Sunstar Air",
+        "callsign": "SUNSTAR",
+        "country": "Germany"
+    },
+    {
+        "id": "STA",
+        "name": "SOLENT AIRLINES",
+        "callsign": "SOLENT AIR",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "STV",
+        "name": "Stevens Virtual Airlines",
+        "callsign": "STEVENS",
+        "country": "Germany"
+    },
+    {
+        "id": "SVO",
+        "name": "Sheremetyevo Airlines",
+        "callsign": "SHEREMETYEVO",
+        "country": "Russia"
+    },
+    {
+        "id": "SWL",
+        "name": "Trans Jet VA",
+        "callsign": "SWING",
+        "country": "Sweden"
+    },
+    {
+        "id": "SZB",
+        "name": "Springbok Virtual",
+        "callsign": "SPRINGBOK",
+        "country": "South Africa"
+    },
+    {
+        "id": "TCA",
+        "name": "Tradewind Caribbean Airlines",
+        "callsign": "TRADEWIND",
+        "country": ""
+    },
+    {
+        "id": "TEA",
+        "name": "Transeurope",
+        "callsign": "TRANSEUROPE",
+        "country": "Germany"
+    },
+    {
+        "id": "TGA",
+        "name": "Trans Global Airlines",
+        "callsign": "GLOBAL",
+        "country": "Hollywood"
+    },
+    {
+        "id": "TJX",
+        "name": "TopJets Virtual Fractions",
+        "callsign": "EXECUTIVE",
+        "country": "USA"
+    },
+    {
+        "id": "TKC",
+        "name": "Cargoturk Virtual",
+        "callsign": "CARGOTURK",
+        "country": "Turkey"
+    },
+    {
+        "id": "TNG",
+        "name": "Transcargo Virtual",
+        "callsign": "TRANSCARGO",
+        "country": "Italy"
+    },
+    {
+        "id": "TTN",
+        "name": "Globe Cargo VA",
+        "callsign": "TITAN",
+        "country": "USA"
+    },
+    {
+        "id": "TWI",
+        "name": "Tailwinds International",
+        "callsign": "TAILWINDS",
+        "country": "USA"
+    },
+    {
+        "id": "UAS",
+        "name": "Universal Air Services",
+        "callsign": "UNIVERSAL",
+        "country": "France"
+    },
+    {
+        "id": "UKC",
+        "name": "UK World Cargo",
+        "callsign": "SAMSON",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "UKD",
+        "name": "UK Direct Airways",
+        "callsign": "UNICORN",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "UKS",
+        "name": "UKSun",
+        "callsign": "SUNJET",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "UKV",
+        "name": "fly uk virtual airways",
+        "callsign": "SKYWAYS",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "UVC",
+        "name": "Unity Virtual Aviation Community",
+        "callsign": "UNITY",
+        "country": "USA"
+    },
+    {
+        "id": "UNI",
+        "name": "United Wings Virtual",
+        "callsign": "UNITED WINGS",
+        "country": "Germany"
+    },
+    {
+        "id": "VAA",
+        "name": "Virtuel Air Alsace",
+        "callsign": "VIRTUEL AIR ALSACE",
+        "country": "France"
+    },
+    {
+        "id": "VAE",
+        "name": "Air Explorer",
+        "callsign": "AIR EXPLORER",
+        "country": "Spain"
+    },
+    {
+        "id": "VAR",
+        "name": "VIRTUALIROMA",
+        "callsign": "VIRTUALIROMA",
+        "country": "Italy"
+    },
+    {
+        "id": "VAW",
+        "name": "AirWeGo Group VA",
+        "callsign": "AIRWEGO",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "VBA",
+        "name": "V-Bird Virtual Airline",
+        "callsign": "VEEBEE",
+        "country": "Netherlands"
+    },
+    {
+        "id": "VBP",
+        "name": "Bruch-Piloten",
+        "callsign": "VBP",
+        "country": "Germany"
+    },
+    {
+        "id": "VFA",
+        "name": "FastAir Virtual Airlines",
+        "callsign": "FASTAIR",
+        "country": "Colombia"
+    },
+    {
+        "id": "VFR",
+        "name": "Virtual VFR Flyig Club",
+        "callsign": "VIRTUAL V F R",
+        "country": ""
+    },
+    {
+        "id": "VIP",
+        "name": "Virtual Pilots Association",
+        "callsign": "FREEWINGS",
+        "country": "France"
+    },
+    {
+        "id": "VIT",
+        "name": "VatitAir",
+        "callsign": "VATITA",
+        "country": "Italy"
+    },
+    {
+        "id": "VPA",
+        "name": "Virtual Pilots Association",
+        "callsign": "FREEWINGS",
+        "country": "World"
+    },
+    {
+        "id": "VVS",
+        "name": "AEROVAL",
+        "callsign": "VVS",
+        "country": "Switzerland"
+    },
+    {
+        "id": "WBA",
+        "name": "WildBlue Airlines",
+        "callsign": "WILDBLUE",
+        "country": "USA"
+    },
+    {
+        "id": "WCT",
+        "name": "Unknown",
+        "callsign": "WILDCAT",
+        "country": "USA"
+    },
+    {
+        "id": "WEU",
+        "name": "Washington Airways Europe",
+        "callsign": "GROLSCH",
+        "country": "USA"
+    },
+    {
+        "id": "WKD",
+        "name": "Weekender",
+        "callsign": "WEEKEND AIR",
+        "country": ""
+    },
+    {
+        "id": "WTA",
+        "name": "World Travel Airline",
+        "callsign": "TRAVEL AIR",
+        "country": "Germany"
+    },
+    {
+        "id": "WWA",
+        "name": "WestWind Airlines",
+        "callsign": "WESTWIND",
+        "country": ""
+    },
+    {
+        "id": "XLI",
+        "name": "Exclusive Airlines",
+        "callsign": "X-LINE",
+        "country": "Poland"
+    },
+    {
+        "id": "XMJ",
+        "name": "MikesJet",
+        "callsign": "MEADOWSWEET",
+        "country": "Poland"
+    },
+    {
+        "id": "YMA",
+        "name": "Compass Airlines",
+        "callsign": "COMPASS",
+        "country": "Australia"
+    },
+    {
+        "id": "YMF",
+        "name": "Compass Logistics",
+        "callsign": "LOGISTICS",
+        "country": "Australia"
+    },
+    {
+        "id": "YPV",
+        "name": "Your Perception Virtual",
+        "callsign": "YOUR PERCEPTION",
+        "country": "Netherlands"
+    },
+    {
+        "id": "WTA",
+        "name": "World Travel Airline (VA)",
+        "callsign": "TravelAir",
+        "country": "Germany"
+    },
+    {
+        "id": "SAV",
+        "name": "SevernAir Virtual (VA)",
+        "callsign": "SEVERNAIR",
+        "country": "United Kingdom"
+    },
+    {
+        "id": "CHR",
+        "name": "ADAC Luftrettung GmbH",
+        "callsign": "CHRISTOPH",
+        "country": "Germany"
+    },
+    {
+        "id": "DBX",
+        "name": "Air Danubius",
+        "callsign": "DANUBIUS",
+        "country": "Romania"
+    },
+    {
+        "id": "ACH",
+        "name": "Air-Child",
+        "callsign": "AIRCHILD",
+        "country": "VA"
+    },
+    {
+        "id": "RUS",
+        "name": "Cirrus Air",
+        "callsign": "CIRRUS",
+        "country": "VA"
+    },
+    {
+        "id": "NSX",
+        "name": "North Star Executive",
+        "callsign": "NORTH STAR",
+        "country": "VA"
+    }
+]

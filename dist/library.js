@@ -3,8 +3,15 @@ var Library = (function () {
     function Library() {
         var _this = this;
         this.airports = {};
+        this.airlines = {};
         require('../data/airports.json').map(function (a) {
             _this.airports[a.id.toLowerCase()] = a;
+        });
+        require('../data/airlines.json').map(function (a) {
+            _this.airlines[a.id.toLowerCase()] = a;
+        });
+        require('../data/airlines_va.json').map(function (a) {
+            _this.airlines[a.id.toLowerCase()] = a;
         });
         console.log('Library loaded');
     }
@@ -15,6 +22,16 @@ var Library = (function () {
     Library.prototype.getAirport = function (id) {
         if (this.airports.hasOwnProperty(id)) {
             return this.airports[id];
+        }
+        return null;
+    };
+    Library.prototype.getAirlines = function (mode) {
+        if (mode === void 0) { mode = ''; }
+        return this.prepareData(this.airlines, mode);
+    };
+    Library.prototype.getAirline = function (id) {
+        if (this.airlines.hasOwnProperty(id)) {
+            return this.airlines[id];
         }
         return null;
     };

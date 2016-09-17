@@ -27,7 +27,7 @@ var library = new Library();
 var vatsim = new VatsimDatabase(library);
 
 App.get('/', function (req, res) {
-    res.send('<h1>vatx - server</h1><ul>  <li><a href="/stats">/stats</a></li>  <li><a href="/clients">/clients</a></li>  <li><a href="/pilots">/pilots</a></li>  <li><a href="/atcs">/atcs</a></li>  <li><a href="/atis">/atis</a></li>  <li><a href="/airports">/airports</a></li>  <li><a href="/airport/eddt">/airport/eddt</a></li>  </ul>  <p><small>Version: ' + vatsim.getServerInfo().version + ' - up since ' + vatsim.getServerInfo().started + '</small></p>');
+    res.send('<h1>vatx - server</h1><ul>  <li><a href="/stats">/stats</a></li>  <li><a href="/clients">/clients</a></li>  <li><a href="/pilots">/pilots</a></li>  <li><a href="/atcs">/atcs</a></li>  <li><a href="/atis">/atis</a></li>  <li><a href="/airports">/airports</a></li>  <li><a href="/airport/eddt">/airport/eddt</a></li>  <li><a href="/airlines">/airlines</a></li>  <li><a href="/airline/dlh">/airline/dlh</a></li>  </ul>  <p><small>Version: ' + vatsim.getServerInfo().version + ' - up since ' + vatsim.getServerInfo().started + '</small></p>');
     track(req);
 });
 
@@ -64,6 +64,24 @@ App.get('/airports', function (req, res) {
 App.get('/airport/:id', function (req, res) {
     if (req.params.id) {
         var airport = library.getAirport(req.params.id.toLowerCase());
+        if (airport) {
+            reply(res, airport);
+            track(req);
+            return;
+        }
+    }
+    fail(res);
+    track(req);
+});
+
+App.get('/airlines', function (req, res) {
+    reply(res, library.getAirlines(req.query.mode));
+    track(req);
+});
+
+App.get('/airline/:id', function (req, res) {
+    if (req.params.id) {
+        var airport = library.getAirline(req.params.id.toLowerCase());
         if (airport) {
             reply(res, airport);
             track(req);

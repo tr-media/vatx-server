@@ -1,8 +1,15 @@
 export class Library {
     private airports = {}
+    private airlines = {}
     constructor() {
         require('../data/airports.json').map(a => {
             this.airports[a.id.toLowerCase()] = a;
+        });
+        require('../data/airlines.json').map(a => {
+            this.airlines[a.id.toLowerCase()] = a;
+        });
+        require('../data/airlines_va.json').map(a => {
+            this.airlines[a.id.toLowerCase()] = a;
         });
         console.log('Library loaded');
     }
@@ -14,6 +21,18 @@ export class Library {
     public getAirport(id: string) {
         if (this.airports.hasOwnProperty(id)) {
             return this.airports[id];
+        }
+        return null;
+    }
+
+    public getAirlines(mode: string = '') {
+        return this.prepareData(this.airlines, mode);
+    }
+    
+
+    public getAirline(id: string) {
+        if (this.airlines.hasOwnProperty(id)) {
+            return this.airlines[id];
         }
         return null;
     }
