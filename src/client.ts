@@ -1,4 +1,5 @@
 import * as moment from 'moment';
+import { FlightStatus } from './flightStatus';
 const fieldNames: string[] = 'callsign:cid:realname:clienttype:frequency:latitude:longitude:altitude:groundspeed:planned_aircraft:planned_tascruise:planned_depairport:planned_altitude:planned_destairport:server:protrevision:rating:transponder:facilitytype:visualrange:planned_revision:planned_flighttype:planned_deptime:planned_actdeptime:planned_hrsenroute:planned_minenroute:planned_hrsfuel:planned_minfuel:planned_altairport:planned_remarks:planned_route:planned_depairport_lat:planned_depairport_lon:planned_destairport_lat:planned_destairport_lon:atis_message:time_last_atis_received:time_logon:heading:QNH_iHg:QNH_Mb:'.split(':');
 
 export class Client {
@@ -43,8 +44,17 @@ export class Client {
     heading: number = 0;
     QNH_iHg: number = 0.0;
     QNH_Mb: number = 0.0;
-    //additional fields
+    //custom fields
+    no_voice: boolean = false;
+    distance_to_destination: number = 0;
+    distance_from_departure: number = 0;
+    status: number = FlightStatus.Unknown;
+    status_string: string = '';
+    estimated_time_of_arrival: moment.Moment = moment.utc([2100, 0, 1]);
     last_update_from_stream: moment.Moment = moment.utc([2000, 0, 1]);
+    homebase: string = '';
+    sort_string: string = '';
+
 
     constructor(fields: string[], streamDate: moment.Moment) {
         if (fields.length == fieldNames.length) {
@@ -73,8 +83,6 @@ export class Client {
                             this[fieldNames[i]] = fields[i];
                         }
                     }
-
-
                 }
                 data[fieldNames[i]] = fields[i];
             }

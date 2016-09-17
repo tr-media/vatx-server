@@ -1,3 +1,4 @@
+import { Library } from './library';
 import { Client } from './client';
 import { Pilot } from './pilot';
 import { Atc } from './atc';
@@ -15,7 +16,9 @@ export class VatsimDatabase {
 
     public lastServerUpdate: moment.Moment;
 
-    constructor() {
+    constructor(
+        private library: Library
+    ) {
         setTimeout(this.timer.bind(this), 500);
     }
 
@@ -23,6 +26,7 @@ export class VatsimDatabase {
         this.downloader.update(function (clients: Client[]) {
             if (clients) {
                 this.pilots = clients.filter(c => { return c instanceof Pilot });
+                this.pilots.forEach(p => p.calculateCustomFields(this.library));
                 this.atcs = clients.filter(c => { return c instanceof Atc });
                 this.atis = clients.filter(c => { return c instanceof Atis });
             }
@@ -32,22 +36,22 @@ export class VatsimDatabase {
 
     listClients(mode: string) {
         return {
-            pilots: this.prepareData(this.pilots, mode),
-            atcs: this.prepareData(this.atcs, mode),
-            atis: this.prepareData(this.atis, mode)
+            pilots: this.prepareData(this.pilots.map(a => a.toJson()), mode),
+            atcs: this.prepareData(this.atcs.map(a => a.toJson()), mode),
+            atis: this.prepareData(this.atis.map(a => a.toJson()), mode)
         };
     }
 
     listPilots(mode: string) {
-        return this.prepareData(this.pilots, mode);
+        return this.prepareData(this.pilots.map(a => a.toJson()), mode);
     }
 
     listAtcs(mode: string) {
-        return this.prepareData(this.atcs, mode);
+        return this.prepareData(this.atcs.map(a => a.toJson()), mode);
     }
 
     listAtis(mode: string) {
-        return this.prepareData(this.atis, mode);
+        return this.prepareData(this.atis.map(a => a.toJson()), mode);
     }
 
     private prepareData(array: any[], mode: string) {

@@ -5,7 +5,8 @@ var atis_1 = require('./atis');
 var vatsim_downloader_1 = require('./vatsim-downloader');
 var moment = require('moment');
 var VatsimDatabase = (function () {
-    function VatsimDatabase() {
+    function VatsimDatabase(library) {
+        this.library = library;
         this.downloader = new vatsim_downloader_1.VatsimDownloader();
         this.startTime = moment();
         this.pilots = [];
@@ -15,8 +16,10 @@ var VatsimDatabase = (function () {
     }
     VatsimDatabase.prototype.timer = function () {
         this.downloader.update(function (clients) {
+            var _this = this;
             if (clients) {
                 this.pilots = clients.filter(function (c) { return c instanceof pilot_1.Pilot; });
+                this.pilots.forEach(function (p) { return p.calculateCustomFields(_this.library); });
                 this.atcs = clients.filter(function (c) { return c instanceof atc_1.Atc; });
                 this.atis = clients.filter(function (c) { return c instanceof atis_1.Atis; });
             }
@@ -25,19 +28,19 @@ var VatsimDatabase = (function () {
     };
     VatsimDatabase.prototype.listClients = function (mode) {
         return {
-            pilots: this.prepareData(this.pilots, mode),
-            atcs: this.prepareData(this.atcs, mode),
-            atis: this.prepareData(this.atis, mode)
+            pilots: this.prepareData(this.pilots.map(function (a) { return a.toJson(); }), mode),
+            atcs: this.prepareData(this.atcs.map(function (a) { return a.toJson(); }), mode),
+            atis: this.prepareData(this.atis.map(function (a) { return a.toJson(); }), mode)
         };
     };
     VatsimDatabase.prototype.listPilots = function (mode) {
-        return this.prepareData(this.pilots, mode);
+        return this.prepareData(this.pilots.map(function (a) { return a.toJson(); }), mode);
     };
     VatsimDatabase.prototype.listAtcs = function (mode) {
-        return this.prepareData(this.atcs, mode);
+        return this.prepareData(this.atcs.map(function (a) { return a.toJson(); }), mode);
     };
     VatsimDatabase.prototype.listAtis = function (mode) {
-        return this.prepareData(this.atis, mode);
+        return this.prepareData(this.atis.map(function (a) { return a.toJson(); }), mode);
     };
     VatsimDatabase.prototype.prepareData = function (array, mode) {
         if (mode === 'dict') {

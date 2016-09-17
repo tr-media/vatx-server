@@ -10,6 +10,26 @@ var Atis = (function (_super) {
     function Atis(data, streamDate) {
         _super.call(this, data, streamDate);
     }
+    Atis.prototype.toJson = function () {
+        return {
+            callsign: this.callsign,
+            cid: this.cid,
+            realname: this.realname,
+            frequency: this.frequency,
+            latitude: this.latitude,
+            longitude: this.longitude,
+            altitude: this.altitude,
+            server: this.server,
+            protrevision: this.protrevision,
+            rating: this.rating,
+            facilitytype: this.facilitytype,
+            visualrange: this.visualrange,
+            atis_message: this.atis_message,
+            time_last_atis_received: this.time_last_atis_received,
+            time_logon: this.time_logon,
+            last_update_from_stream: this.last_update_from_stream
+        };
+    };
     return Atis;
 }(client_1.Client));
 exports.Atis = Atis;
