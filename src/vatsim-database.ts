@@ -79,9 +79,11 @@ export class VatsimDatabase {
     }
 
     getServerInfo() {
+        var pkg = require('../package.json');
         return {
-            version: require('../package.json').version,
-            started: this.startTime.utc().format()
+            version: pkg.version,
+            started: this.startTime.utc().format(),
+            meta: pkg.vatx
         };
     }
 }

@@ -43,6 +43,10 @@ App.get('/stats', function (req, res) {
     reply(res, vatsim.getStats());
     track(req);
 });
+App.get('/about', function (req, res) {
+    reply(res, vatsim.getServerInfo());
+    track(req);
+});
 App.get('/airports', function (req, res) {
     reply(res, library.getAirports(req.query.mode));
     track(req);
