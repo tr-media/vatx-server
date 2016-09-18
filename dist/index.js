@@ -48,7 +48,7 @@ App.get('/about', function (req, res) {
     track(req);
 });
 App.get('/airports', function (req, res) {
-    reply(res, library.getAirports(req.query.mode));
+    reply(res, library.getAirports(req.query.mode, req.query.all));
     track(req);
 });
 App.get('/airport/:id', function (req, res) {

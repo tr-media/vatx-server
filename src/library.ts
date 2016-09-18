@@ -5,7 +5,11 @@ export class Library {
     private airlineSearchIndex = [];
     constructor() {
         require('../data/airports.json').map(a => {
-            this.airports[a.id.toUpperCase()] = a;
+            var key = a.id.toUpperCase();
+            this.airports[key] = a;
+            if(key.match(/[A-Za-z]{4}/)) {
+                this.airports[key].major = true;
+            }
         });
         for (var key in this.airports) {
             this.airportSearchIndex.push({ key: key, value: key });
@@ -34,8 +38,18 @@ export class Library {
         console.log('Library loaded');
     }
 
-    public getAirports(mode: string = '') {
-        return this.prepareData(this.airports, mode);
+    public getAirports(mode: string = '', all: boolean = false) {
+        if (all) {
+            return this.prepareData(this.airports, mode);
+        } else {
+            var tmp = {};
+            for(var key in this.airports) {
+                if(this.airports[key].major) {
+                    tmp[key] = this.airports[key];
+                }
+            }
+            return this.prepareData(tmp, mode);
+        }
     }
 
     public getAirport(id: string) {

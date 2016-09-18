@@ -7,7 +7,11 @@ var Library = (function () {
         this.airlines = {};
         this.airlineSearchIndex = [];
         require('../data/airports.json').map(function (a) {
-            _this.airports[a.id.toUpperCase()] = a;
+            var key = a.id.toUpperCase();
+            _this.airports[key] = a;
+            if (key.match(/[A-Za-z]{4}/)) {
+                _this.airports[key].major = true;
+            }
         });
         for (var key in this.airports) {
             this.airportSearchIndex.push({ key: key, value: key });
@@ -35,9 +39,21 @@ var Library = (function () {
         }
         console.log('Library loaded');
     }
-    Library.prototype.getAirports = function (mode) {
+    Library.prototype.getAirports = function (mode, all) {
         if (mode === void 0) { mode = ''; }
-        return this.prepareData(this.airports, mode);
+        if (all === void 0) { all = false; }
+        if (all) {
+            return this.prepareData(this.airports, mode);
+        }
+        else {
+            var tmp = {};
+            for (var key in this.airports) {
+                if (this.airports[key].major) {
+                    tmp[key] = this.airports[key];
+                }
+            }
+            return this.prepareData(tmp, mode);
+        }
     };
     Library.prototype.getAirport = function (id) {
         id = id.toUpperCase();
