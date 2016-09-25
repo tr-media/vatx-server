@@ -63,7 +63,7 @@ export class Client {
                 if (this.hasOwnProperty(fieldNames[i])) {
                     //Parse dates
                     if (this[fieldNames[i]] instanceof moment) {
-                        let tmp = moment(fields[i]);
+                        let tmp = moment.utc(fields[i], "YYYYMMDDHHmmss");
                         if (tmp.isValid()) {
                             this[fieldNames[i]] = tmp;
                         }

@@ -59,7 +59,7 @@ var Client = (function () {
             for (var i = 0; i < fieldNames.length; i++) {
                 if (this.hasOwnProperty(fieldNames[i])) {
                     if (this[fieldNames[i]] instanceof moment) {
-                        var tmp = moment(fields[i]);
+                        var tmp = moment.utc(fields[i], "YYYYMMDDHHmmss");
                         if (tmp.isValid()) {
                             this[fieldNames[i]] = tmp;
                         }
