@@ -67,8 +67,8 @@ var VatsimDownloader = (function () {
                     next(null, clients);
                 }
                 else {
-                    this.nextClientUpdate = moment().add(1, 'minute');
-                    console.log('Failed to get client list. Will retry in 1 minute.');
+                    this.nextClientUpdate = moment().add(30, 'seconds');
+                    console.log('Failed to get client list. Will retry in 30 seconds.');
                     next(true);
                 }
             }.bind(this));
@@ -99,7 +99,12 @@ var VatsimDownloader = (function () {
     VatsimDownloader.prototype.getTextfile = function (url, callback) {
         request.get({ url: url, timeout: 10000 }, function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                callback(null, body.replace(/\r/g, '').split('\n'));
+                if (body.length > 0) {
+                    callback(null, body.replace(/\r/g, '').split('\n'));
+                }
+                else {
+                    callback('Empty response.');
+                }
             }
             else {
                 callback(error);
