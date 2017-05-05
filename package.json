@@ -1,51 +1,51 @@
 {
-    "name": "vatx-server",
-    "version": "1.1.5",
-    "description": "vat:x server",
-    "main": "dist/index.js",
-    "engines": {
-        "node": "4.5.0"
-    },
-    "scripts": {
-        "nodemon": "nodemon dist/index.js",
-        "postinstall": "typings install || exit 0",
-        "clean": "rimraf dist node_modules typings",
-        "prebuild": "rimraf dist/*",
-        "build": "tsc",
-        "autobuild": "tsc --watch",
-        "start": "node dist/index.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/tr-media/vatx-server.git"
-    },
-    "author": {
-        "name": "Tobias Reimann",
-        "url": "https://tr-media.org"
-    },
-    "homepage": "https://vatx.net",
-    "license": "MIT",
-    "private": true,
-    "bugs": {
-        "url": "https://github.com/tr-media/vatx-server/issues"
-    },
-    "vatx": {
-        "airport_rev": 1,
-        "airline_rev": 1
-    },
-    "dependencies": {
-        "command-line-args": "4.0.4",
-        "compression": "1.6.2",
-        "express": "4.15.2",
-        "md5": "2.2.1",
-        "moment": "2.18.1",
-        "request": "2.81.0",
-        "universal-analytics": "0.4.13"
-    },
-    "devDependencies": {
-        "nodemon": "1.11.0",
-        "rimraf": "2.6.1",
-        "typescript": "2.3.2",
-        "typings": "2.1.1"
-    }
+  "name": "vatx-server",
+  "version": "1.1.5",
+  "description": "vat:x server",
+  "main": "dist/index.js",
+  "engines": {
+    "node": "4.5.0"
+  },
+  "scripts": {
+    "nodemon": "nodemon dist/index.js",
+    "postinstall": "typings install || exit 0",
+    "clean": "rimraf dist node_modules typings",
+    "prebuild": "rimraf dist/*",
+    "build": "tsc",
+    "autobuild": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tr-media/vatx-server.git"
+  },
+  "author": {
+    "name": "Tobias Reimann",
+    "url": "https://tr-media.org"
+  },
+  "homepage": "https://vatx.net",
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/tr-media/vatx-server/issues"
+  },
+  "vatx": {
+    "airport_rev": 1,
+    "airline_rev": 1
+  },
+  "dependencies": {
+    "command-line-args": "4.0.4",
+    "compression": "1.6.2",
+    "express": "4.15.2",
+    "md5": "2.2.1",
+    "moment": "2.18.1",
+    "querystring": "0.2.0",
+    "request": "2.81.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.11.0",
+    "rimraf": "2.6.1",
+    "typescript": "2.3.2",
+    "typings": "2.1.1"
+  }
 }

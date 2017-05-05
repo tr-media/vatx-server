@@ -5,6 +5,8 @@ var Compression = require("compression");
 var vatsim_database_1 = require("./vatsim-database");
 var library_1 = require("./library");
 var commandLineArgs = require("command-line-args");
+var request = require("request");
+var querystring = require("querystring");
 var ua = require('universal-analytics');
 var md5 = require('md5');
 var options = commandLineArgs([
@@ -95,13 +97,18 @@ function track(req) {
         var userAgent = req.headers['user-agent'];
         var documentPath = req.path;
         var hashedClientIp = md5(req.connection.remoteAddress);
-        ua(options.gaid, md5(hashedClientIp + userAgent), {
-            uip: req.connection.remoteAddress,
-            ua: userAgent,
-            aip: true,
-            strictCidFormat: false,
-            https: true
-        }).pageview(documentPath).send();
+        request.post('https://www.google-analytics.com/collect', {
+            body: querystring.stringify({
+                v: 1,
+                t: "pageview",
+                dp: documentPath,
+                ua: userAgent,
+                uip: req.connection.remoteAddress,
+                aip: 1,
+                tid: options.gaid,
+                cid: md5(hashedClientIp + userAgent)
+            })
+        });
     }
 }
 App.listen(port, function () {
