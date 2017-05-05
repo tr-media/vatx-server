@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var FlightStatus;
 (function (FlightStatus) {
     FlightStatus[FlightStatus["Unknown"] = 0] = "Unknown";
     FlightStatus[FlightStatus["Planned"] = 1] = "Planned";
@@ -10,5 +12,4 @@
     FlightStatus[FlightStatus["Landing"] = 7] = "Landing";
     FlightStatus[FlightStatus["Landed"] = 8] = "Landed";
     FlightStatus[FlightStatus["Offline"] = 9] = "Offline";
-})(exports.FlightStatus || (exports.FlightStatus = {}));
-var FlightStatus = exports.FlightStatus;
+})(FlightStatus = exports.FlightStatus || (exports.FlightStatus = {}));

@@ -1,19 +1,16 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Express = require("express");
-var Compression = require('compression');
-var vatsim_database_1 = require('./vatsim-database');
-var library_1 = require('./library');
-var commandLineArgs = require('command-line-args');
+var Compression = require("compression");
+var vatsim_database_1 = require("./vatsim-database");
+var library_1 = require("./library");
+var commandLineArgs = require("command-line-args");
 var ua = require('universal-analytics');
 var md5 = require('md5');
 var options = commandLineArgs([
     { name: 'port', alias: 'p', type: Number },
     { name: 'gaid', type: String }
 ]);
-var analytics = null;
-if (options.gaid) {
-    analytics = ua(options.gaid);
-}
 var App = Express();
 App.use(Compression());
 var port = options.port || 80;
@@ -94,15 +91,17 @@ function fail(res) {
     res.status(404).send('Not found');
 }
 function track(req) {
-    if (analytics) {
+    if (options.gaid) {
         var userAgent = req.headers['user-agent'];
         var documentPath = req.path;
         var hashedClientIp = md5(req.connection.remoteAddress);
-        analytics.pageview({
-            dp: documentPath,
+        ua(options.gaid, md5(hashedClientIp + userAgent), {
+            uip: req.connection.remoteAddress,
             ua: userAgent,
-            cid: md5(hashedClientIp + userAgent)
-        }).send();
+            aip: true,
+            strictCidFormat: false,
+            https: true
+        }).pageview(documentPath).send();
     }
 }
 App.listen(port, function () {

@@ -1,10 +1,11 @@
 "use strict";
-var server_1 = require('./server');
-var pilot_1 = require('./pilot');
-var atc_1 = require('./atc');
-var atis_1 = require('./atis');
-var request = require('request');
-var moment = require('moment');
+Object.defineProperty(exports, "__esModule", { value: true });
+var server_1 = require("./server");
+var pilot_1 = require("./pilot");
+var atc_1 = require("./atc");
+var atis_1 = require("./atis");
+var request = require("request");
+var moment = require("moment");
 var VatsimDownloader = (function () {
     function VatsimDownloader() {
         this.nextServerUpdate = moment();

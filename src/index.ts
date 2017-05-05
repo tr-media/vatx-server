@@ -15,10 +15,7 @@ const options = commandLineArgs([
 ]);
 
 //Create universal analytics instance if requested
-var analytics = null;
-if (options.gaid) {
-    analytics = ua(options.gaid);
-}
+
 var App = Express();
 App.use(Compression());
 var port = options.port || 80;
@@ -115,15 +112,17 @@ function fail(res: Response) {
 }
 
 function track(req: Request) {
-    if (analytics) {
+    if (options.gaid) {
         var userAgent = req.headers['user-agent'];
         var documentPath = req.path;
         var hashedClientIp = md5(req.connection.remoteAddress);
-        analytics.pageview({
-            dp: documentPath,
+        ua(options.gaid, md5(hashedClientIp + userAgent), {
+            uip: req.connection.remoteAddress,
             ua: userAgent,
-            cid: md5(hashedClientIp + userAgent)
-        }).send();
+            aip: true,
+            strictCidFormat: false, 
+            https: true}
+        ).pageview(documentPath).send();
     }
 }
 

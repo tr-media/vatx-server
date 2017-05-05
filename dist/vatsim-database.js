@@ -1,9 +1,10 @@
 "use strict";
-var pilot_1 = require('./pilot');
-var atc_1 = require('./atc');
-var atis_1 = require('./atis');
-var vatsim_downloader_1 = require('./vatsim-downloader');
-var moment = require('moment');
+Object.defineProperty(exports, "__esModule", { value: true });
+var pilot_1 = require("./pilot");
+var atc_1 = require("./atc");
+var atis_1 = require("./atis");
+var vatsim_downloader_1 = require("./vatsim-downloader");
+var moment = require("moment");
 var VatsimDatabase = (function () {
     function VatsimDatabase(library) {
         this.library = library;
