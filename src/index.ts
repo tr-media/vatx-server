@@ -27,6 +27,8 @@ var library = new Library();
 var vatsim = new VatsimDatabase(library);
 
 App.get('/', function (req, res) {
+    var client = getClientInfo(req);
+    res.setHeader('x-vatx-client-ip', client.ip);
     res.send('<h1>vatx - server</h1><ul>  <li><a href="/stats">/stats</a></li>  <li><a href="/clients">/clients</a></li>  <li><a href="/pilots">/pilots</a></li>  <li><a href="/atcs">/atcs</a></li>  <li><a href="/atis">/atis</a></li>  <li><a href="/airports">/airports</a></li>  <li><a href="/airport/eddt">/airport/eddt</a></li>  <li><a href="/airlines">/airlines</a></li>  <li><a href="/airline/dlh">/airline/dlh</a></li>  </ul>  <p><small>Version: ' + vatsim.getServerInfo().version + ' - up since ' + vatsim.getServerInfo().started + '</small></p>');
     track(req);
 });
@@ -119,32 +121,38 @@ function track(req: Request) {
         var userAgent = req.headers['user-agent'];
         var documentPath = req.path;
 
-        var clientIp = '0.0.0.0';
-        if (ipaddr.IPv4.isValid(req.connection.remoteAddress)) {
-            clientIp = req.connection.remoteAddress;
-        } else if (ipaddr.IPv6.isValid(req.connection.remoteAddress)) {
-            var ip = ipaddr.IPv6.parse(req.connection.remoteAddress);
-            if (ip.isIPv4MappedAddress()) {
-                clientIp = ip.toIPv4Address().toString();
-            } else {
-                clientIp = req.connection.remoteAddress;
-            }
-        }
+        var client = getClientInfo(req);
         var hashedClientIp = md5(req.connection.remoteAddress);
         var body = querystring.stringify({
             v: 1,
             t: "pageview",
             dp: documentPath,
             ua: userAgent,
-            uip: clientIp,
+            uip: client.ip,
             aip: 1,
             tid: options.gaid,
             cid: md5(hashedClientIp + userAgent)
         });
-        console.log(body);
         request.post('https://www.google-analytics.com/collect', {
             body: body
         });
+    }
+}
+
+function getClientInfo(req) {
+    var clientIp = '0.0.0.0';
+    if (ipaddr.IPv4.isValid(req.connection.remoteAddress)) {
+        clientIp = req.connection.remoteAddress;
+    } else if (ipaddr.IPv6.isValid(req.connection.remoteAddress)) {
+        var ip = ipaddr.IPv6.parse(req.connection.remoteAddress);
+        if (ip.isIPv4MappedAddress()) {
+            clientIp = ip.toIPv4Address().toString();
+        } else {
+            clientIp = req.connection.remoteAddress;
+        }
+    }
+    return {
+        ip: clientIp
     }
 }
 
