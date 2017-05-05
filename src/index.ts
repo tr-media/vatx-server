@@ -1,4 +1,4 @@
-import {Request, Response} from "express";
+import { Request, Response } from "express";
 import * as Express from "express";
 import * as Compression from 'compression';
 import { VatsimDatabase } from './vatsim-database';
@@ -140,15 +140,22 @@ function track(req: Request) {
 }
 
 function getClientInfo(req) {
+    var src = req.connection.remoteAddress;
+    if (req.headers.hasOwnProperty('x-forwarded-for')) {
+        var ips = req.headers['x-forwarded-for'].split(',').filter(i => i);
+        if (ips.length > 0) {
+            src = ips[ips.length - 1].trim();
+        }
+    }
     var clientIp = '0.0.0.0';
-    if (ipaddr.IPv4.isValid(req.connection.remoteAddress)) {
-        clientIp = req.connection.remoteAddress;
-    } else if (ipaddr.IPv6.isValid(req.connection.remoteAddress)) {
-        var ip = ipaddr.IPv6.parse(req.connection.remoteAddress);
+    if (ipaddr.IPv4.isValid(src)) {
+        clientIp = src;
+    } else if (ipaddr.IPv6.isValid(src)) {
+        var ip = ipaddr.IPv6.parse(src);
         if (ip.isIPv4MappedAddress()) {
             clientIp = ip.toIPv4Address().toString();
         } else {
-            clientIp = req.connection.remoteAddress;
+            clientIp = src;
         }
     }
     return {

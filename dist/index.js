@@ -117,17 +117,24 @@ function track(req) {
     }
 }
 function getClientInfo(req) {
-    var clientIp = '0.0.0.0';
-    if (ipaddr.IPv4.isValid(req.connection.remoteAddress)) {
-        clientIp = req.connection.remoteAddress;
+    var src = req.connection.remoteAddress;
+    if (req.headers.hasOwnProperty('x-forwarded-for')) {
+        var ips = req.headers['x-forwarded-for'].split(',').filter(function (i) { return i; });
+        if (ips.length > 0) {
+            src = ips[ips.length - 1].trim();
+        }
     }
-    else if (ipaddr.IPv6.isValid(req.connection.remoteAddress)) {
-        var ip = ipaddr.IPv6.parse(req.connection.remoteAddress);
+    var clientIp = '0.0.0.0';
+    if (ipaddr.IPv4.isValid(src)) {
+        clientIp = src;
+    }
+    else if (ipaddr.IPv6.isValid(src)) {
+        var ip = ipaddr.IPv6.parse(src);
         if (ip.isIPv4MappedAddress()) {
             clientIp = ip.toIPv4Address().toString();
         }
         else {
-            clientIp = req.connection.remoteAddress;
+            clientIp = src;
         }
     }
     return {
