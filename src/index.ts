@@ -6,6 +6,7 @@ import { Library } from './library';
 import * as commandLineArgs from 'command-line-args';
 import { ArgDescriptor } from 'command-line-args';
 import * as request from 'request';
+var ipaddr = require('ipaddr.js');
 var querystring = require("querystring");
 var ua = require('universal-analytics');
 var md5 = require('md5');
@@ -117,19 +118,32 @@ function track(req: Request) {
     if (options.gaid) {
         var userAgent = req.headers['user-agent'];
         var documentPath = req.path;
+
+        var clientIp = '0.0.0.0';
+        if (ipaddr.IPv4.isValid(req.connection.remoteAddress)) {
+            clientIp = req.connection.remoteAddress;
+        } else if (ipaddr.IPv6.isValid(req.connection.remoteAddress)) {
+            var ip = ipaddr.IPv6.parse(req.connection.remoteAddress);
+            if (ip.isIPv4MappedAddress()) {
+                clientIp = ip.toIPv4Address().toString();
+            } else {
+                clientIp = req.connection.remoteAddress;
+            }
+        }
         var hashedClientIp = md5(req.connection.remoteAddress);
-        
+        var body = querystring.stringify({
+            v: 1,
+            t: "pageview",
+            dp: documentPath,
+            ua: userAgent,
+            uip: clientIp,
+            aip: 1,
+            tid: options.gaid,
+            cid: md5(hashedClientIp + userAgent)
+        });
+        console.log(body);
         request.post('https://www.google-analytics.com/collect', {
-            body: querystring.stringify({
-                v: 1,
-                t: "pageview",
-                dp: documentPath,
-                ua: userAgent,
-                uip: req.connection.remoteAddress,
-                aip: 1,
-                tid: options.gaid,
-                cid: md5(hashedClientIp + userAgent)
-            })
+            body: body
         });
     }
 }
