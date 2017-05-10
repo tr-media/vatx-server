@@ -30,6 +30,7 @@ App.get('/', function (req, res) {
     var client = getClientInfo(req);
     res.setHeader('x-vatx-client-ip', client.ip);
     res.setHeader('x-vatx-client-cid', client.cid);
+    res.setHeader('Access-Control-Allow-Headers', 'x-vatx-client-cid');
     res.send('<h1>vatx - server</h1><ul>  <li><a href="/stats">/stats</a></li>  <li><a href="/clients">/clients</a></li>  <li><a href="/pilots">/pilots</a></li>  <li><a href="/atcs">/atcs</a></li>  <li><a href="/atis">/atis</a></li>  <li><a href="/airports">/airports</a></li>  <li><a href="/airport/eddt">/airport/eddt</a></li>  <li><a href="/airlines">/airlines</a></li>  <li><a href="/airline/dlh">/airline/dlh</a></li>  </ul>  <p><small>Version: ' + vatsim.getServerInfo().version + ' - up since ' + vatsim.getServerInfo().started + '</small></p>');
     track(req);
 });
@@ -105,6 +106,11 @@ App.get('/find', function (req, res) {
     track(req);
 });
 
+App.options('/*', function (req, res) {
+    reply(res, {});
+    track(req);
+})
+
 function reply(res: Response, output: any) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'x-vatx-client-cid');
@@ -114,6 +120,7 @@ function reply(res: Response, output: any) {
 
 function fail(res: Response) {
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'x-vatx-client-cid');
     res.setHeader('Content-Type', 'application/json');
     res.status(404).send('Not found');
 }
