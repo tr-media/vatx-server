@@ -88,6 +88,7 @@ App.get('/find', function (req, res) {
     track(req);
 });
 App.options('/*', function (req, res) {
+    res.setHeader('Allow', 'GET, HEAD');
     reply(res, {});
     track(req);
 });

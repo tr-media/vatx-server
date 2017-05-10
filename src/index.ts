@@ -107,9 +107,10 @@ App.get('/find', function (req, res) {
 });
 
 App.options('/*', function (req, res) {
+    res.setHeader('Allow', 'GET, HEAD');
     reply(res, {});
     track(req);
-})
+});
 
 function reply(res: Response, output: any) {
     res.setHeader('Access-Control-Allow-Origin', '*');
