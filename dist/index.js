@@ -22,6 +22,7 @@ var vatsim = new vatsim_database_1.VatsimDatabase(library);
 App.get('/', function (req, res) {
     var client = getClientInfo(req);
     res.setHeader('x-vatx-client-ip', client.ip);
+    res.setHeader('x-vatx-client-cid', client.cid);
     res.send('<h1>vatx - server</h1><ul>  <li><a href="/stats">/stats</a></li>  <li><a href="/clients">/clients</a></li>  <li><a href="/pilots">/pilots</a></li>  <li><a href="/atcs">/atcs</a></li>  <li><a href="/atis">/atis</a></li>  <li><a href="/airports">/airports</a></li>  <li><a href="/airport/eddt">/airport/eddt</a></li>  <li><a href="/airlines">/airlines</a></li>  <li><a href="/airline/dlh">/airline/dlh</a></li>  </ul>  <p><small>Version: ' + vatsim.getServerInfo().version + ' - up since ' + vatsim.getServerInfo().started + '</small></p>');
     track(req);
 });
@@ -87,6 +88,7 @@ App.get('/find', function (req, res) {
 });
 function reply(res, output) {
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'x-vatx-client-cid');
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(output));
 }
@@ -100,7 +102,6 @@ function track(req) {
         var userAgent = req.headers['user-agent'];
         var documentPath = req.path;
         var client = getClientInfo(req);
-        var hashedClientIp = md5(req.connection.remoteAddress);
         var body = querystring.stringify({
             v: 1,
             t: "pageview",
@@ -109,7 +110,7 @@ function track(req) {
             uip: client.ip,
             aip: 1,
             tid: options.gaid,
-            cid: md5(hashedClientIp + userAgent)
+            cid: client.cid
         });
         request.post('https://www.google-analytics.com/collect', {
             body: body
@@ -137,10 +138,18 @@ function getClientInfo(req) {
             clientIp = src;
         }
     }
+    var cid;
+    if (req.headers.hasOwnProperty('x-vatx-client-cid')) {
+        cid = req.headers['x-vatx-client-cid'];
+    }
+    else {
+        cid = md5(req.connection.remoteAddress + req.headers['user-agent']);
+    }
     return {
-        ip: clientIp
+        ip: clientIp,
+        cid: cid
     };
 }
 App.listen(port, function () {
-    console.log('Server listening on ports ' + port);
+    console.log('Server listening on port ' + port);
 });
