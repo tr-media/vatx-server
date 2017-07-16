@@ -4,7 +4,8 @@
   "description": "vat:x server",
   "main": "dist/index.js",
   "engines": {
-    "node": "6.11.1"
+    "node": "6.11.1",
+    "npm": "3.10.6"
   },
   "scripts": {
     "nodemon": "nodemon dist/index.js",
