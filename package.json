@@ -1,10 +1,10 @@
 {
   "name": "vatx-server",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "vat:x server",
   "main": "dist/index.js",
   "engines": {
-    "node": "4.5.0"
+    "node": "6.11.1"
   },
   "scripts": {
     "nodemon": "nodemon dist/index.js",
