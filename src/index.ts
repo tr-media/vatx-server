@@ -21,7 +21,7 @@ const options = commandLineArgs([
 
 var App = Express();
 App.use(Compression());
-var port = options.port || 80;
+var port = options.port || 8080;
 
 var library = new Library();
 var vatsim = new VatsimDatabase(library);
@@ -31,7 +31,7 @@ App.get('/', function (req, res) {
     res.setHeader('x-vatx-client-ip', client.ip);
     res.setHeader('x-vatx-client-cid', client.cid);
     res.setHeader('Access-Control-Allow-Headers', 'x-vatx-client-cid');
-    res.send('<h1>vatx - server</h1><ul>  <li><a href="/stats">/stats</a></li>  <li><a href="/clients">/clients</a></li>  <li><a href="/pilots">/pilots</a></li>  <li><a href="/atcs">/atcs</a></li>  <li><a href="/atis">/atis</a></li>  <li><a href="/airports">/airports</a></li>  <li><a href="/airport/eddt">/airport/eddt</a></li>  <li><a href="/airlines">/airlines</a></li>  <li><a href="/airline/dlh">/airline/dlh</a></li>  </ul>  <p><small>Version: ' + vatsim.getServerInfo().version + ' - up since ' + vatsim.getServerInfo().started + '</small></p>');
+    res.send('<h1>vatx - server</h1><ul>  <li><a href="/stats">/stats</a></li>  <li><a href="/clients">/clients</a></li>  <li><a href="/pilots">/pilots</a></li>  <li><a href="/atcs">/atcs</a></li>  <li><a href="/atis">/atis</a></li>  <li><a href="/airports">/airports</a></li>  <li><a href="/airport/eddt">/airport/eddt</a></li>  <li><a href="/airlines">/airlines</a></li>  <li><a href="/airline/dlh">/airline/dlh</a></li>  </ul>  <p><small>vat:x api version ' + vatsim.getServerInfo().version + ' - up since ' + vatsim.getServerInfo().started + '<br>Hosted by Tobias Reimann | <a href="https://www.tobias-reimann.com/impressum/">Impressum</a> | <a href="https://www.tobias-reimann.com/datenschutz/">Datenschutz</a></small></p>');
     track(req);
 });
 

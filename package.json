@@ -1,12 +1,8 @@
 {
   "name": "vatx-server",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "vat:x server",
   "main": "dist/index.js",
-  "engines": {
-    "node": "6.11.1",
-    "npm": "3.10.6"
-  },
   "scripts": {
     "nodemon": "nodemon dist/index.js",
     "postinstall": "typings install || exit 0",
@@ -22,7 +18,7 @@
   },
   "author": {
     "name": "Tobias Reimann",
-    "url": "https://tr-media.org"
+    "url": "https://www.tobias-reimann.com"
   },
   "homepage": "https://vatx.net",
   "license": "MIT",
@@ -35,20 +31,20 @@
     "airline_rev": 1
   },
   "dependencies": {
-    "command-line-args": "4.0.4",
-    "compression": "1.6.2",
-    "express": "4.15.2",
-    "ipaddr.js": "1.3.0",
+    "command-line-args": "5.1.1",
+    "compression": "1.7.4",
+    "express": "4.16.4",
+    "ipaddr.js": "1.9.0",
     "md5": "2.2.1",
-    "moment": "2.18.1",
+    "moment": "2.24.0",
     "querystring": "0.2.0",
-    "request": "2.81.0",
-    "universal-analytics": "0.4.13"
+    "request": "2.88.0",
+    "universal-analytics": "0.4.20"
   },
   "devDependencies": {
-    "nodemon": "1.11.0",
-    "rimraf": "2.6.1",
-    "typescript": "2.3.2",
+    "nodemon": "1.18.11",
+    "rimraf": "2.6.3",
+    "typescript": "3.4.4",
     "typings": "2.1.1"
   }
 }
