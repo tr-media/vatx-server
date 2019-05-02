@@ -3,6 +3,10 @@
   "version": "1.2.2",
   "description": "vat:x server",
   "main": "dist/index.js",
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "nodemon": "nodemon dist/index.js",
     "postinstall": "typings install || exit 0",
