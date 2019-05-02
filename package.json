@@ -9,7 +9,6 @@
   },
   "scripts": {
     "nodemon": "nodemon dist/index.js",
-    "postinstall": "typings install || exit 0",
     "clean": "rimraf dist node_modules typings",
     "prebuild": "rimraf dist/*",
     "build": "tsc",
