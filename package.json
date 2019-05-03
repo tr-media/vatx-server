@@ -34,6 +34,7 @@
     "airline_rev": 1
   },
   "dependencies": {
+    "@types/node": "^11.13.9",
     "command-line-args": "5.1.1",
     "compression": "1.7.4",
     "express": "4.16.4",
